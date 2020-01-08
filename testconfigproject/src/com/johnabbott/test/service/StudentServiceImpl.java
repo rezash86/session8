@@ -15,10 +15,10 @@ public class StudentServiceImpl implements StudentService {
 	public StudentServiceImpl() {
 		listStudents = new ArrayList<Student>();
 		
-		listStudents.add(new Student("toto1", "popo1", 15));
-		listStudents.add(new Student("toto2", "popo2", 14));
-		listStudents.add(new Student("toto3", "popo3", 24));
-		listStudents.add(new Student("toto4", "popo4", 34));
+		listStudents.add(new Student(1, "toto1", "popo1", 15));
+		listStudents.add(new Student(2, "toto2", "popo2", 14));
+		listStudents.add(new Student(3, "toto3", "popo3", 24));
+		listStudents.add(new Student(4, "toto4", "popo4", 34));
 	}
 	
 	public List<Student> getStudents(){
@@ -27,6 +27,7 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public boolean addStudent(Student std) {
+		std.setId(listStudents.size() + 1);
 		listStudents.add(std);
 		return true;
 	}

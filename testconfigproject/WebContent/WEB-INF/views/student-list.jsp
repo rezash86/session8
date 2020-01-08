@@ -18,6 +18,8 @@
 				<th>first name</th>
 				<th>last name</th>
 				<th>age</th>
+				<th>part time</th>
+				<th>Gender</th>
 			</tr>
 
 			<c:forEach var="student" items="${studList}">
@@ -25,6 +27,10 @@
 					<td><c:out value="${student.firstName}"></c:out></td>
 					<td><c:out value="${student.lastName}"></c:out></td>
 					<td><c:out value="${student.age}"></c:out></td>
+					<td><c:out value="${student.partTime}"></c:out></td>
+					<td><c:out value="${student.gender}"></c:out></td>
+					<td><a href="updatestudent?studentId=${student.id}">update me</a></td>
+					<td><a href="deletestudent?studentId=${student.id}">delete me</a></td>
 				</tr>
 			</c:forEach>
 
@@ -51,6 +57,17 @@
 					<tr>
 						<td>Age</td>
 						<td><form:input path="age" /></td>
+					</tr>
+
+					<tr>
+						<td>Part-time</td>
+						<td><form:checkbox path="partTime" /></td>
+					</tr>
+
+					<tr>
+						<td>Gender</td>
+						<td><form:radiobutton path="gender" value="M" />Male <form:radiobutton
+								path="gender" value="F" />Female</td>
 					</tr>
 
 					<tr>

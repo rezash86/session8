@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.johnabbott.test.model.Student;
@@ -34,7 +35,7 @@ public class StudentController {
 
 		List<Student> students = service.getStudents();
 		modelView.addObject("studList", students);
-		modelView.addObject("student", new Student("toto", "popo", 10));
+		modelView.addObject("student", new Student());
 		
 		return modelView;
 	}
@@ -57,6 +58,21 @@ public class StudentController {
 		else {
 			return "ErrorPage";
 		}
+	}
+	
+	@RequestMapping(value = "deletestudent")
+	public String deleteStudent(@RequestParam("studentId") int studentId) {
+		return "";
+	}
+	
+	@RequestMapping(value = "updatestudent")
+	public String updateStudent(@RequestParam("studentId") int studentId) {
+//		if(service.addStudent(std))
+//			return "redirect:/students/getstudents";
+//		else {
+//			return "ErrorPage";
+//		}
+		return "";
 	}
 	
 }

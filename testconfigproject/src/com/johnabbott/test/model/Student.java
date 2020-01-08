@@ -4,16 +4,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Student {
-	
+	private int id;
 	private String firstName;
 	private String lastName;
 	private int age;
+	private boolean partTime;
+	private String gender;
 	
 	public Student() {
 		
 	}
 	
-	public Student(String firstName, String lastName, int age) {
+	public Student(int id, String firstName, String lastName, int age) {
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
@@ -43,9 +46,31 @@ public class Student {
 		this.age = age;
 	}
 
+	
 
-	
-	
-	
+	public boolean isPartTime() {
+		return partTime;
+	}
+
+	public void setPartTime(boolean partTime) {
+		this.partTime = partTime;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	
 }
